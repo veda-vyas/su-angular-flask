@@ -1,30 +1,118 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Wordcount</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <style>
-      .container {
-        max-width: 1000px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Wordcount 3000</h1>
-      <form role="form" method='POST' action='/'>
-        <div class="form-group">
-          <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter URL..." style="max-width: 300px;" autofocus required>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <br>
-      {% for error in errors %}
-        <h4>{{ error }}</h4>
-      {% endfor %}
-    </div>
-    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </body>
+<head>
+	<title>Short Uploads - Home</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/homepage.css">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"> -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+	<br><br><br><br>
+	<div class="container-fluid page-height">
+		<div class="row">
+			<div class="col-lg-6 col-md-12">
+				
+			</div>
+			<div class="col-lg-6 col-md-12">
+				<div class="container">
+					<div class="auth-div align-middle">
+						<div class="row">
+							<div class="col-md-12">
+								<h4 class="text-center">Sign up using</h4><hr>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-6 col-md-6">
+								<a href="/googlelogin" class="btn btn-danger btn-block">
+									<span class="fab fa-google-plus-g"></span>
+								</a>
+							</div>
+							<div class="col-lg-6 col-md-6">
+								<a href="/facebooklogin" class="btn btn-primary btn-block">
+									<span class="fab fa-facebook-f"></span>
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 text-center">
+								or<br>
+								<a href="/gallery">Welcome as a Guest</a>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+              {% if errors %}
+  							{% for error in errors %}
+                  <p class="alert alert-danger">{{ error }}</p>
+                {% endfor %}
+              {% endif %}
+              {% if results %}
+                {% for result in results %}
+                  <p class="alert alert-success">{{ result }}</p>
+                {% endfor %}
+              {% endif %}
+              <div class="col-lg-12">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item col-6">
+                    <a class="nav-link  text-center active" data-toggle="tab" href="#login" role="tab">Log In</a>
+                  </li>
+                  <li class="nav-item col-6">
+                    <a class="nav-link text-center " data-toggle="tab" href="#signup" role="tab">Sign Up</a>
+                  </li>
+                </ul>
+
+                <div class="tab-content">
+                  <div class="tab-pane active" id="login" role="tabpanel">
+                      <form method="POST" action="/login" class="form text-center">
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="loginemail" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" id="loginpassword" name="password" placeholder="Password">
+                      </div>
+                      <button type="submit" id="loginbtn" class="btn btn-yellow">Log In</button>
+                    </form>
+                  </div>
+                  <div class="tab-pane" id="signup" role="tabpanel">
+                    <form method="POST" action="/" class="form text-center">
+											<div class="form-group">
+												<input type="text" name="name" class="form-control" id="signup_email" aria-describedby="emailHelp" placeholder="Enter your Name">
+											</div>
+											<div class="form-group">
+												<input type="email" name="email" class="form-control" id="signup_email" aria-describedby="emailHelp" placeholder="Enter your Email Address">
+											</div>
+											<div class="form-group">
+												<input type="password" class="form-control" id="signup_password" name="password" placeholder="Set a Password">
+											</div>
+											<button type="submit" class="btn btn-yellow">Sign Up</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>	
+						<small>See our <a href="/">terms of service</a> and <a href="/">privacy policy</a></small>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="row">
+			<div class="col-lg-6 col-md-12 background-yellow">
+				<div class="container">	
+					<nav class="fixed-bottom text-center col-lg-6 col-md-12">
+					  	<a class="navbar-brand" href="#"><i class="fab fa-facebook-f"></i></a>
+					  	<a class="navbar-brand" href="#"><i class="fab fa-google-plus-g"></i></a>
+					  	<a class="navbar-brand" href="#"><i class="fab fa-twitter"></i></a>
+					  	<a class="navbar-brand" href="#"><i class="fab fa-youtube"></i></a>
+						<br>
+						<br>
+					</nav>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</body>
 </html>
