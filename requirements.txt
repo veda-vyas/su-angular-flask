@@ -11,7 +11,6 @@ Jinja2==2.10
 Mako==1.0.7
 MarkupSafe==1.0
 MongoAlchemy==0.19
-pkg-resources==0.0.0
 psycopg2==2.7.4
 pymongo==2.8.1
 python-dateutil==2.6.1
