@@ -4,7 +4,7 @@
 	<title>Short Uploads - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link src="{{ url_for('static', filename='homepage.css') }}"></link>
+  <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}"></link>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"> -->
 </head>
 <body ng-controller="WordcountController">
@@ -43,7 +43,7 @@
             <br>
             <div class="row">
               {% raw %}
-                <p class="alert alert-danger" ng-repeat="val in result['error']">{{ val }}</p>
+                <p class="alert alert-danger" ng-repeat="val in result['error']" style="width: 100%">{{ val }}</p>
               {% endraw %}
               <div class="col-lg-12">
                 <ul class="nav nav-tabs" role="tablist">
