@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Short Uploads - Development Version</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="mdb/css/bootstrap.min.css" rel="stylesheet">
+  <link href="mdb/css/mdb.min.css" rel="stylesheet">
+  <link href="mdb/css/style.css" rel="stylesheet">
+  <link href="mdb/css/emojis.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Teko:700" rel="stylesheet">
+</head>
+<body>
+  <nav style="padding:4px;" class="navbar navbar-expand-lg sticky-top navbar-dark black">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style="padding-left:15px;" class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand navbar-left" href="gallery.html">
+            <img src="static/logo.png" height="40px" width="40px" style="border-radius: 20%">
+        </a>
+        <form class="form-inline md-form form-sm middle" style="margin-bottom: 0px">
+
+            <input class="form-control" style="margin-top:5px; height:20px; width: 300px;" type="text" placeholder="what's on your mind to watch?">
+            <button style=" margin-bottom:0px" class="btn btn-sm btn-light-blue black-text"><img src="static/clapboard.png" width="25px" height="15px"></button>
+        </form>
+        <ul class="navbar-nav ml-auto mt-lg-0 pull-right">
+            <li class="nav-item dropdown">
+                <!-- <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LANGUAGES</a> -->
+                <!-- <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">TELUGU</a>
+                    <a class="dropdown-item" href="#">HINDI</a>
+                    <a class="dropdown-item" href="#">ENGLISH</a>
+                </div> -->
+                <select>
+                    <option value="Telugu" selected>Telugu</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="English">English</option>
+                </select>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">WATCHLIST</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="btn btn-sm btn-red" href="/">SIGN IN</a>
+            </li>
+        </ul>
+    </div>
+  </nav>
+
+  <div style="margin-top: 1%; margin-left:230px; margin-right:230px; background: url('static/bg.jpeg')">
+    <div class="row">
+      <div id="carousel-thumb" style="width: 100%" class="carousel carousel-fade" data-ride="carousel">
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img class="d-block w-100 banner" src="https://1.bp.blogspot.com/-6Jaqjpnyx2c/WfLMZT3injI/AAAAAAAAACU/dxtEA5_bm18GQqXsYoDL29ByE9nOqUTlQCEwYBhgL/s1600/geetha%2Bsubramanyam.jpg" alt="Geeta Subramanyam">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 banner" src="https://i.ytimg.com/vi/pc9Vwcsb46M/maxresdefault.jpg" alt="Happy Hours">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 banner" src="https://i2.wp.com/s3-ap-southeast-1.amazonaws.com/assetsonlyshort/wp-content/uploads/20161014014204/love-proposals-telugu-short-film.jpg?fit=1280%2C720" alt="Love Proposals">
+            </div>
+        </div>
+        <!--/.Slides-->
+        <!--Controls-->
+        <a class="carousel-control-prev" style="left: -100px;" href="#carousel-thumb" role="button" data-slide="prev">
+            <span class="black-text fa fa-angle-left fa-3x align-middle" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" style="right: -100px;" href="#carousel-thumb" role="button" data-slide="next">
+            <span class="black-text fa fa-angle-right fa-3x align-middle" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/.Controls-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-thumb" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-thumb" data-slide-to="1"></li>
+            <li data-target="#carousel-thumb" data-slide-to="2"></li>
+        </ol>
+      </div>
+    </div>  
+  </div>
+  <div style="margin-left:230px; margin-right:230px">
+    <div class="slider-frame">
+      <div class="btnn prev text-center">
+        <br>
+        <span class="fa fa-angle-left fa-3x align-middle"></span>
+      </div>
+      <div class="btnn next text-center">
+        <br>
+        <span class="fa fa-angle-right fa-3x align-middle"></span>
+      </div>
+      <div class="slider-container">
+          <h4>CHANNELS</h4>
+          <div class="slide channel">
+            <img class="tile__img" src="data:image/png;base64,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" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Telugu One</h5>
+              </div>
+            </div>
+          </div>
+          <div class="slide channel">
+            <img class="tile__img" src="https://yt3.ggpht.com/a-/AK162_72dfX-Blj3mzkwHla3K6LZSpBRKaTOBPJWFQ=s900-mo-c-c0xffffffff-rj-k-no" alt="" />
+            <div class="tile__details text-center channel">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Runway Reel</h5>
+              </div>
+            </div>
+          </div>
+          <div class="slide channel">
+            <img class="tile__img" src="https://cdn.123telugu.com/content/wp-content/uploads/2015/06/idream.jpg" alt="" />
+            <div class="tile__details text-center channel">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">IDream Media</h5>
+              </div>
+            </div>
+          </div>
+          <div class="slide channel">
+            <img class="tile__img" src="http://filmmakersfans.com/wp-content/uploads/2015/05/pocket-short-films.jpg" alt="" />
+            <div class="tile__details text-center channel">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Pocket Films</h5>
+              </div>
+            </div>
+          </div>
+          <div class="slide channel">
+            <img class="tile__img" src="https://pbs.twimg.com/profile_images/755091984969117696/5awoSj6E_400x400.jpg" alt="" />
+            <div class="tile__details text-center channel">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Silly Shots</h5>
+              </div>
+            </div>
+          </div>
+          <div class="slide channel">
+            <img class="tile__img" src="https://yt3.ggpht.com/a-/AK162_4jUezb2cVXEngV6DdJycB8EMwHE2hORxKlYA=s900-mo-c-c0xffffffff-rj-k-no" alt="" />
+            <div class="tile__details text-center channel">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Make my Film</h5>
+              </div>
+            </div>
+          </div>  
+      </div>
+    </div>
+
+    <div class="slider-frame">
+      <div class="btnn prev text-center">
+        <br>
+        <span class="fa fa-angle-left fa-3x align-middle"></span>
+      </div>
+      <div class="btnn next text-center">
+        <br>
+        <span class="fa fa-angle-right fa-3x align-middle"></span>
+      </div>
+      <div class="slider-container">
+          <h4>SERIES</h4>
+          <a href="/watch" class="slide channel">
+            <img class="tile__img" src="https://i.ytimg.com/vi/I3cRfm62wRQ/maxresdefault.jpg" alt="" />
+            <div class="tile__details">
+              <div class="tile__title white-text white-text">
+                703 | Action Break Down
+              </div>
+            </div>
+          </a>
+          <div class="slide channel">
+            <img class="tile__img" src="http://www.smtv24x7.com/SMTV24x7images/englishnews/bigimage/pills_7307.jpg" alt="" />
+            <div class="tile__details">
+              <div class="tile__title white-text">
+                Pilla
+              </div>
+            </div>
+          </div>
+          <div class="slide channel">
+            <img class="tile__img" src="http://filmyfocus.com/wp-content/uploads/2017/03/Pelli-Gola-webseries.jpg" alt="" />
+            <div class="tile__details">
+              <div class="tile__title white-text">
+                Pelligola
+              </div>
+            </div>
+          </div>
+          <div class="slide channel">
+            <img class="tile__img" src="https://1.bp.blogspot.com/-gbx5gzkyGBg/WPb0GUzwUyI/AAAAAAAAA-w/Op0UbfMeh6cN5z1Hnx_TR1c-pjDXreqLwCLcB/s640/Grid-banner-1200X628.jpg" alt="" />
+            <div class="tile__details">
+              <div class="tile__title white-text">
+                Endukila
+              </div>
+            </div>
+          </div>
+          <div class="slide channel">
+            <img class="tile__img" src="http://industryhit.com/t/wp-content/gallery/geetasub-mar12/geeta-sub-1.jpg" alt="" />
+            <div class="tile__details">
+              <div class="tile__title white-text">
+                Geeta Subramanyam
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="slider-frame">
+      <div class="btnn prev text-center">
+        <br>
+        <span class="fa fa-angle-left fa-3x align-middle"></span>
+      </div>
+      <div class="btnn next text-center">
+        <br>
+        <span class="fa fa-angle-right fa-3x align-middle"></span>
+      </div>
+      <div class="slider-container">
+          <h4>TRENDING</h4>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/kLk7lhLS39c/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 class="auto-cut">Birthday || Directed by Hrishikesh Tummila</h5>
+                <h6>28m 52s</h6>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/M_we_HqAeJw/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 class="auto-cut">Bahumati || The Reward</h5>
+                <h6>28m 52s</h6>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/Q7nm2pFsZow/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Tilak || By KV Dayanand Reddy</h5>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/sliccXS0agk/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Visham</h5>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/QoDTTvPaUiY/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">OK</h5>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/bwEDtvSt0G4/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Rachana</h5>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>  
+      </div>
+    </div>
+
+    <div class="slider-frame">
+      <div class="btnn prev text-center">
+        <br>
+        <span class="fa fa-angle-left fa-3x align-middle"></span>
+      </div>
+      <div class="btnn next text-center">
+        <br>
+        <span class="fa fa-angle-right fa-3x align-middle"></span>
+      </div>
+      <div class="slider-container">
+          <h4>RELEASES</h4>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/kLk7lhLS39c/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 class="auto-cut">Birthday || Directed by Hrishikesh Tummila</h5>
+                <h6>28m 52s</h6>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/M_we_HqAeJw/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 class="auto-cut">Bahumati || The Reward</h5>
+                <h6>28m 52s</h6>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/Q7nm2pFsZow/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Tilak || By KV Dayanand Reddy</h5>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/sliccXS0agk/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Visham</h5>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/QoDTTvPaUiY/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">OK</h5>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <img class="tile__img" src="https://i.ytimg.com/vi/bwEDtvSt0G4/maxresdefault.jpg" alt="" />
+            <div class="tile__details text-center">
+              <div class="tile__title white-text text-left">
+                <h5 style="font-size:16px;">Rachana</h5>
+                <div class="card-links">
+                  <a href="/iage" class="white-text"><span class="fa fa-play fa-1x"></span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="/iage" class="white-text"><span class="fa fa-clock-o fa-1x"></span></a>
+                </div>
+              </div>
+              <a class="fa fa-angle-down fa-3x align-bottom" data-toggle="modal" data-target="#myModal"></a>
+            </div>
+          </div>  
+      </div>
+    </div>
+
+    <div class="slider-frames">
+      <!-- <div class="btnn prevs text-center">
+        <br>
+        <span class="fa fa-angle-left fa-3x align-middle"></span>
+      </div>
+      <div class="btnn nexts text-center">
+        <br>
+        <span class="fa fa-angle-right fa-3x align-middle"></span>
+      </div> -->
+      <div class="slider-containers">
+          <h4>GENRE</h4>
+          <div class="slides text-center">
+            <div class="emoji  emoji--haha">
+              <div class="emoji__face">
+                <div class="emoji__eyes"></div>
+                <div class="emoji__mouth">
+                  <div class="emoji__tongue"></div>
+                </div>
+              </div>  
+            </div>
+          </div>
+          <div class="slides text-center">
+            <div class="emoji  emoji--love">
+              <div class="emoji__heart"></div>
+            </div>
+          </div>
+          <div class="slides text-center">
+            <div class="emoji  emoji--wow">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__eyes"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+          </div>
+          <div class="slides text-center">
+            <div class="emoji  emoji--sad">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__eyes"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+          </div>
+          <div class="slides text-center">
+            <div class="emoji  emoji--angry">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__eyes"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="slides text-center">
+            <div class="emoji  emoji--yay">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+          </div> -->
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script  src="js/index.js"></script>
+  <script type="text/javascript" src="mdb/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="mdb/js/popper.min.js"></script>
+  <script type="text/javascript" src="mdb/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="mdb/js/mdb.min.js"></script>
+</body>
+
+</html>
+  

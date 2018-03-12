@@ -1,25 +1,37 @@
 <!DOCTYPE html>
-<html ng-app="WordcountApp">
+<html ng-app="ShortUploads">
 <head>
 	<title>Short Uploads - Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}"></link>
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Teko:500" rel="stylesheet">
 	<!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"> -->
 </head>
-<body ng-controller="WordcountController">
+<body ng-controller="AuthController">
   <br><br><br><br>
   <div class="container-fluid page-height">
     <div class="row">
       <div class="col-lg-6 col-md-12">
-        
+        <div class="container">
+          <div class="align-middle row">
+            <div class="col-md-3"></div>
+            <div class="col-md-8 text-center logo-div">
+              <img src="static/logo.png" style="height: 480px; width: 100%;  border-radius: 10%; box-shadow: 0 2px 12px 6px rgba(0,0,0,0.06), 0 2px 12px 0 rgba(0,0,0,0.06), 0 2px 12px 0 rgba(0,0,0,0.08)"><br>
+              <!-- <span class="logo1">SHORT</span>
+              <span class="logo2">UPLOADS</span> -->
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+        </div>
       </div>
       <div class="col-lg-6 col-md-12">
         <div class="container">
           <div class="auth-div align-middle">
             <div class="row">
               <div class="col-md-12">
-                <h4 class="text-center">Sign up using</h4><hr>
+                <h4 class="text-center">Sign Up</h4><hr>
               </div>
             </div>
             <div class="row">
@@ -35,16 +47,13 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-12 col-md-12 text-center">
-                or<br>
-                <a href="/gallery">Welcome as a Guest</a>
+              <div class="col-lg-12 col-md-12 text-center" style="margin-top:5px;">
+                <a class="btn btn-dark btn-block" href="/gallery">Welcome as a Guest</a>
               </div>
             </div>
             <br>
             <div class="row">
-              {% raw %}
-                <p class="alert alert-danger" ng-repeat="val in result['error']" style="width: 100%">{{ val }}</p>
-              {% endraw %}
+                <p class="alert alert-danger" ng-repeat="val in result['result']" style="width: 100%" hidden>{{ val }}</p>
               <div class="col-lg-12">
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="nav-item col-6">

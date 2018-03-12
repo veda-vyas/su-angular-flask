@@ -1,13 +1,35 @@
 body {
 	height: 100%;
     font-size: 16px;
-    background-color: #141414;
+    background: url("/static/bg.jpeg");
 }
 
 .background-yellow {
 	/*background-color: rgba(255, 193, 7, 0.75);;*/
 	background-color: transparent;
 }
+
+.logo1 {
+  font-family: 'Teko', cursive;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: black;
+  color: white;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+.logo2 {
+  font-family: 'Teko', sans-serif;
+  padding-left: 5px;
+  border-top: 2px solid black; 
+  border-bottom: 2px solid black; 
+  color: black;
+  font-size: 48px;
+}
+
 .background-black {
 	background-color: transparent;
 }
@@ -57,6 +79,9 @@ body {
 	background-color: transparent !important;
 	border-bottom: 2px solid red !important;
 }
+.nav-link:hover {
+	color: black !important;
+}
 .tab-pane {
 	padding: 10px;
 }
@@ -68,6 +93,13 @@ body {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding: 5%;
-	border: 1px solid grey;
-	background-color: #f3f3f3;
+	color: black;
+	background-color: #fff;
+	box-shadow: 0 2px 12px 6px rgba(0,0,0,0.06), 0 2px 12px 0 rgba(0,0,0,0.06), 0 2px 12px 0 rgba(0,0,0,0.08)
+}
+
+.logo-div {
+	/*box-shadow: 0 2px 12px 6px rgba(0,0,0,0.06), 0 2px 12px 0 rgba(0,0,0,0.06), 0 2px 12px 0 rgba(0,0,0,0.08);*/
+	/*background-color: black;*/ 
+	padding: 0;
 }

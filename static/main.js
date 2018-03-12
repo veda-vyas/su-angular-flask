@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  angular.module('WordcountApp', [])
+  var app = angular.module('ShortUploads', [])
 
-  .controller('WordcountController', ['$scope', '$log', '$http', '$timeout',
+  app.controller('AuthController', ['$scope', '$log', '$http', '$timeout',
     function($scope, $log, $http, $timeout) {
       $scope.getResults = function() {
         $log.log("test");
@@ -12,41 +12,57 @@
         var email = $scope.email;
         var password = $scope.password;
 
-	    // fire the API request
 	    $http.post('/signup', {"name": name,"email": email,"password": password}).
 	      success(function(results) {
 	        $log.log(results);
-	        getStatus(results);
+          $scope.result = results;
 	      }).
 	      error(function(error) {
 	        $log.log(error);
+          $scope.result = error;
 	      });
       };
-
-    function getStatus(jobID) {
-      var timeout = "";
-
-      var poller = function() {
-        // fire another request
-        $http.get('/results/'+jobID).
-          success(function(data, status, headers, config) {
-            if(status === 202) {
-              $log.log(data, status);
-            } else if (status === 200){
-              $log.log(data);
-              $scope.result = data;
-              $timeout.cancel(timeout);
-              return false;
-            }
-            // continue to call the poller() function every 2 seconds
-            // until the timeout is cancelled
-            timeout = $timeout(poller, 2000);
-          });
-      };
-      poller();
-    }
-
     }
   ]);
 
+  app.controller('EditPlaylist', ['$scope', '$log', '$http', '$timeout', '$sce',
+    function($scope, $log, $http, $timeout, $sce) {
+      $scope.responseById = function() {
+        $scope.result = "Fetching ID";
+        var id = $scope.id;
+
+        $scope.result = "Making API Call...";
+        $http.get('/youtubeapi/'+id).
+        success(function(results) {
+          $scope.result = "Fetching Results..";
+          $log.log(results);
+          var videos = []
+          for(var i=0; i<results.items.length; i++){
+            var video = {}
+            video.id = results.items[i].contentDetails.videoId;
+            video.title = results.items[i].snippet.title
+            video.start = '05'
+            video.end = undefined;
+            
+            var videourl = "https://www.youtube.com/embed/"+video.id+"?rel=0&amp;showinfo=0&start="+video.start+"&end="+video.end
+            var turl = $sce.trustAsResourceUrl(videourl)
+            video.url = turl
+
+            videos.push(video)
+          }
+          $scope.videos = videos;
+          $scope.result = "";
+        }).
+        error(function(error) {
+          $log.log(error);
+          $scope.result = "Couldn't make API call at this moment. See browser console for more information.";
+        });
+      };
+      $scope.videoUrl = function(video) {
+        var videourl = "https://www.youtube.com/embed/"+video.id+"?rel=0&amp;showinfo=0&start="+video.start+"&end="+video.end;
+        var turl = $sce.trustAsResourceUrl(videourl);
+        video.url = turl;
+      }
+    }
+  ]);
 }());

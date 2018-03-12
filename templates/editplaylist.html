@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShortUploads">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Short Uploads - Development Version</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="mdb/css/bootstrap.min.css" rel="stylesheet">
+  <link href="mdb/css/mdb.min.css" rel="stylesheet">
+  <link href="mdb/css/style.css" rel="stylesheet">
+  <link href="mdb/css/emojis.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Teko:700" rel="stylesheet">
+</head>
+<body ng-controller="EditPlaylist">
+  <nav style="padding:4px;" class="navbar navbar-expand-lg sticky-top navbar-dark black">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style="padding-left:15px;" class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand navbar-left" href="gallery.html">
+            <img src="static/logo.png" height="40px" width="40px" style="border-radius: 20%">
+        </a>
+        <!-- <form class="form-inline md-form form-sm middle" style="margin-bottom: 0px">
+
+            <input class="form-control" style="margin-top:5px; height:20px; width: 300px;" type="text" placeholder="what's on your mind to watch?">
+            <button style=" margin-bottom:0px" class="btn btn-sm btn-light-blue black-text"><img src="static/clapboard.png" width="25px" height="15px"></button>
+        </form> -->
+        <ul class="navbar-nav ml-auto mt-lg-0 pull-right">
+            <li class="nav-item dropdown">
+                <!-- <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LANGUAGES</a> -->
+                <!-- <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">TELUGU</a>
+                    <a class="dropdown-item" href="#">HINDI</a>
+                    <a class="dropdown-item" href="#">ENGLISH</a>
+                </div> -->
+                <!-- <select>
+                    <option value="Telugu" selected>Telugu</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="English">English</option>
+                </select> -->
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#">WATCHLIST</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="btn btn-sm btn-red" href="/">SIGN OUT</a>
+            </li>
+        </ul>
+    </div>
+  </nav>
+
+  <div style="margin-top: 1%; margin-left:230px; margin-right:230px; background: url('static/bg.jpeg')">
+    <div class="row">
+      <form class="md-form w-100" method="GET" ng-submit="responseById()">
+          <h2>Playlist Details</h2>
+          <input class="form-control" type="text" ng-model="id" placeholder="Enter playlist ID. (ex: PLuKg-WhduhkmzWeuo18BFBA_YrrbBkV2W)" required>
+          <button type="submit" class="btn btn-primary">Get</button>
+          <button type="button" class="btn btn-success">Save</button>
+      </form>
+      {% raw %}
+        <div ng-cloak>
+          {{result}}
+          <div ng-repeat='video in videos'>
+            <div class="row">
+              <form method="POST" class="col-8" action="/watch">
+                <h4>ID: {{video.id}}</h4>
+                <label class="black-text">Title:</label>
+                <input style="padding-top: 0; margin-top: 0;" type="text" id="title" ng-model="video.title" name="title" class="form-control">
+                <div class="row">
+                  <div class="col-6">
+                    <label class="black-text">Start at:</label>
+                    <input style="padding-top: 0; margin-top: 0;" type="text" id="start" name="start" class="form-control" ng-model="video.start" placeholder="Video begins at? (MM:SS)">
+                  </div>
+                  <div class="col-6">
+                    <label class="black-text">End at:</label>
+                    <input style="padding-top: 0; margin-top: 0;" type="text" id="end" name="end" class="form-control" ng-model="video.end" placeholder="Video ends at? (MM:SS)">
+                  </div>
+                </div>
+                <button type="button" ng-click="videoUrl(video)" class="btn btn-primary">Submit</button>
+              </form>
+              <div class="col-4">
+                <iframe width="350px" height="200px" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+                <h4>{{video.title}}</h4>  
+              </div>
+            </div>
+            <hr>
+            <!-- <input type="text" name=""> -->
+          </form>
+        </div>
+      {% endraw %}
+    </div>  
+  </div>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script type="text/javascript" src="mdb/js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="mdb/js/popper.min.js"></script>
+  <script type="text/javascript" src="mdb/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="mdb/js/mdb.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>
+  
